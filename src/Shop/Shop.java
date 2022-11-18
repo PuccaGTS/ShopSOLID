@@ -1,5 +1,5 @@
 package Shop;
-
+//Single-responsibility principle - принцин единственной ответственности
 import Product.*;
 
 import java.util.List;
@@ -22,7 +22,7 @@ public class Shop {
         }
         System.out.println("======================================");
     }
-
+    //В циклах не используются числа (принцип Magic)
     public void showAllProducts(){
         System.out.println("///////////////////////////////////////////");
         for (int i = 0; i < products.size(); i++) {
@@ -30,6 +30,12 @@ public class Shop {
         }
         System.out.println("///////////////////////////////////////////");
     }
+    //Single-responsibility principle - принцин единственной ответственности
+    //Только магазин может продавать товар
+    public void sell(Product product){
+        products.remove(product);
+    }
+
 
 
 }

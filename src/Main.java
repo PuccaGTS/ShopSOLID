@@ -1,3 +1,4 @@
+import Client.Client;
 import Product.*;
 import Shop.*;
 
@@ -29,10 +30,12 @@ public class Main {
         products.add(product8);
         products.add(product9);
 
+        Client client = new Client("Мишана");
         Shop shop = new Shop("Магазинчик", products);
 
         shop.showAllProducts();
-
+        client.buy(product1, shop);
+        shop.showAllProducts();
 
         shop.filterProduct(products, s->s.getPrice()<200);
         shop.filterProduct(products, s->s instanceof Fruit);
